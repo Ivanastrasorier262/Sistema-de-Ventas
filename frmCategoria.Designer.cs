@@ -22,7 +22,6 @@ namespace CapaPresentacion
 
         private void InitializeComponent()
         {
-            labelTituloDetalle = new MaterialLabel();
             labelDescripcion = new MaterialLabel();
             labelEstado = new MaterialLabel();
             labelTituloLista = new MaterialLabel();
@@ -44,27 +43,15 @@ namespace CapaPresentacion
             colDescripcion = new DataGridViewTextBoxColumn();
             colEstadoValor = new DataGridViewTextBoxColumn();
             colEstado = new DataGridViewTextBoxColumn();
+            labelTituloDetalle = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvData).BeginInit();
             SuspendLayout();
-            // 
-            // labelTituloDetalle
-            // 
-            labelTituloDetalle.BackColor = Color.Transparent;
-            labelTituloDetalle.Depth = 0;
-            labelTituloDetalle.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
-            labelTituloDetalle.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            labelTituloDetalle.ForeColor = Color.Black;
-            labelTituloDetalle.Location = new Point(40, 80);
-            labelTituloDetalle.MouseState = MaterialSkin.MouseState.HOVER;
-            labelTituloDetalle.Name = "labelTituloDetalle";
-            labelTituloDetalle.Size = new Size(237, 35);
-            labelTituloDetalle.TabIndex = 0;
-            labelTituloDetalle.Text = "Detalle de Categoría";
             // 
             // labelDescripcion
             // 
             labelDescripcion.Depth = 0;
             labelDescripcion.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            labelDescripcion.ForeColor = Color.Transparent;
             labelDescripcion.Location = new Point(40, 170);
             labelDescripcion.MouseState = MaterialSkin.MouseState.HOVER;
             labelDescripcion.Name = "labelDescripcion";
@@ -216,6 +203,7 @@ namespace CapaPresentacion
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(60, 30);
             btnBuscar.TabIndex = 12;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnLimpiarBuscador
             // 
@@ -227,6 +215,7 @@ namespace CapaPresentacion
             btnLimpiarBuscador.Name = "btnLimpiarBuscador";
             btnLimpiarBuscador.Size = new Size(53, 30);
             btnLimpiarBuscador.TabIndex = 13;
+            btnLimpiarBuscador.Click += btnLimpiarBuscador_Click;
             // 
             // dgvData
             // 
@@ -283,6 +272,16 @@ namespace CapaPresentacion
             colEstado.ReadOnly = true;
             colEstado.Width = 120;
             // 
+            // labelTituloDetalle
+            // 
+            labelTituloDetalle.AutoSize = true;
+            labelTituloDetalle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTituloDetalle.Location = new Point(62, 90);
+            labelTituloDetalle.Name = "labelTituloDetalle";
+            labelTituloDetalle.Size = new Size(209, 25);
+            labelTituloDetalle.TabIndex = 15;
+            labelTituloDetalle.Text = "Detalle de Categoria";
+            // 
             // frmCategoria
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -312,9 +311,6 @@ namespace CapaPresentacion
         }
 
         #endregion
-
-        // ======= VARIABLES =======
-        private MaterialLabel labelTituloDetalle;
         private MaterialLabel labelDescripcion;
         private MaterialLabel labelEstado;
         private MaterialLabel labelTituloLista;
@@ -339,5 +335,6 @@ namespace CapaPresentacion
         private DataGridViewTextBoxColumn colDescripcion;
         private DataGridViewTextBoxColumn colEstadoValor;
         private DataGridViewTextBoxColumn colEstado;
+        private Label labelTituloDetalle;
     }
 }
