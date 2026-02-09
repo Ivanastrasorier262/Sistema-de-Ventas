@@ -241,8 +241,8 @@ public partial class frmUsuarios : MaterialForm
 
     private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-        if (dgvData.Columns[e.ColumnIndex].Name == "btnselaccionar"
-            && e.RowIndex >= 0)
+        if (dgvData.Columns[e.ColumnIndex].Name == "btnSeleccionar"
+         && e.RowIndex >= 0)
         {
             txtIndice.Text = e.RowIndex.ToString();
             txtId.Text = dgvData.Rows[e.RowIndex].Cells["id"].Value.ToString();
@@ -252,7 +252,7 @@ public partial class frmUsuarios : MaterialForm
             txtClave.Text = dgvData.Rows[e.RowIndex].Cells["Clave"].Value.ToString();
             txtConfirmarClave.Text = txtClave.Text;
 
-            int idRol = Convert.ToInt32(dgvData.Rows[e.RowIndex].Cells["idRol"].Value);
+            int idRol = Convert.ToInt32(dgvData.Rows[e.RowIndex].Cells["IdRol"].Value);
             foreach (OpcionCombo item in cboRol.Items)
             {
                 if (Convert.ToInt32(item.Valor) == idRol)
@@ -283,9 +283,9 @@ public partial class frmUsuarios : MaterialForm
 
     private void btneliminar_Click(object sender, EventArgs e)
     {
-        if (txtIndice.Text == "-1")
+        if (Convert.ToInt32(txtId.Text) == 0)
         {
-            MessageBox.Show("Seleccione un usuario",
+            MessageBox.Show("Seleccione un registro válido",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return;
         }
@@ -343,5 +343,7 @@ public partial class frmUsuarios : MaterialForm
         }
     }
 }
+    
+
 
 

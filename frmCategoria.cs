@@ -106,6 +106,7 @@ namespace CapaPresentacion
         // ================= GUARDAR =================
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            // Validación básica de descripción
             if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
             {
                 MessageBox.Show("Debe ingresar una descripción", "Advertencia",
@@ -115,14 +116,17 @@ namespace CapaPresentacion
 
             string mensaje;
 
+            // CREACIÓN SEGURA DEL OBJETO
             Categoria obj = new Categoria()
             {
-                IdCategoria = Convert.ToInt32(txtId.Text),
+                // Corregido: Si txtId está vacío o no es un número, asigna 0 para evitar el crash
+                IdCategoria = string.IsNullOrWhiteSpace(txtId.Text) ? 0 : Convert.ToInt32(txtId.Text),
                 Descripcion = txtDescripcion.Text.Trim(),
                 Estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).Valor) == 1
             };
 
             // ================= NUEVO =================
+            // Si el ID es 0, el sistema entiende que es un registro nuevo
             if (obj.IdCategoria == 0)
             {
                 int idGenerado = new CN_Categoria().Registrar(obj, out mensaje);
@@ -144,6 +148,7 @@ namespace CapaPresentacion
             // ================= EDICIÓN =================
             else
             {
+                // Validamos que realmente haya una fila seleccionada en el grid
                 if (txtIndice.Text == "-1")
                 {
                     MessageBox.Show("Seleccione una categoría para editar", "Advertencia",

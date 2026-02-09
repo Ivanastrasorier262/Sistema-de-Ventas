@@ -48,19 +48,29 @@
             label1 = new Label();
             label2 = new Label();
             contenedor = new Panel();
+            materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            tabPage3 = new TabPage();
+            tabPage4 = new TabPage();
+            tabPage5 = new TabPage();
+            tabPage6 = new TabPage();
+            tabPage7 = new TabPage();
+            tabPage8 = new TabPage();
             lblusuario = new Label();
             label4 = new Label();
             label3 = new Label();
             menuStrip2.SuspendLayout();
             contenedor.SuspendLayout();
+            materialTabControl1.SuspendLayout();
             SuspendLayout();
             // 
             // menu
             // 
             menu.ImageScalingSize = new Size(20, 20);
-            menu.Location = new Point(0, 156);
+            menu.Location = new Point(3, 220);
             menu.Name = "menu";
-            menu.Size = new Size(1274, 24);
+            menu.Size = new Size(1327, 24);
             menu.TabIndex = 0;
             menu.Text = "menuStrip1";
             menu.ItemClicked += menu_ItemClicked;
@@ -70,9 +80,9 @@
             menuStrip2.BackColor = SystemColors.ButtonHighlight;
             menuStrip2.ImageScalingSize = new Size(20, 20);
             menuStrip2.Items.AddRange(new ToolStripItem[] { menuusuario, menumantenedor, manuventas, manucompras, menuclientes, menuproveedor, menureportes, menuacercade });
-            menuStrip2.Location = new Point(0, 78);
+            menuStrip2.Location = new Point(3, 142);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(1274, 78);
+            menuStrip2.Size = new Size(1327, 78);
             menuStrip2.TabIndex = 1;
             menuStrip2.Text = "menuStrip2";
             // 
@@ -253,10 +263,10 @@
             menutitulo.AutoSize = false;
             menutitulo.BackColor = Color.LightBlue;
             menutitulo.ImageScalingSize = new Size(20, 20);
-            menutitulo.Location = new Point(0, 0);
+            menutitulo.Location = new Point(3, 64);
             menutitulo.Name = "menutitulo";
             menutitulo.RightToLeft = RightToLeft.Yes;
-            menutitulo.Size = new Size(1274, 78);
+            menutitulo.Size = new Size(1327, 78);
             menutitulo.TabIndex = 2;
             menutitulo.Text = "menuStrip3";
             menutitulo.ItemClicked += menuStrip3_ItemClicked;
@@ -282,15 +292,118 @@
             // 
             // contenedor
             // 
+            contenedor.Controls.Add(materialTabControl1);
             contenedor.Controls.Add(lblusuario);
             contenedor.Controls.Add(label4);
             contenedor.Controls.Add(label3);
             contenedor.Dock = DockStyle.Fill;
-            contenedor.Location = new Point(0, 180);
+            contenedor.Location = new Point(3, 244);
             contenedor.Name = "contenedor";
-            contenedor.Size = new Size(1274, 339);
+            contenedor.Size = new Size(1327, 361);
             contenedor.TabIndex = 5;
             contenedor.Paint += contenedor_Paint;
+            // 
+            // materialTabControl1
+            // 
+            materialTabControl1.Controls.Add(tabPage1);
+            materialTabControl1.Controls.Add(tabPage2);
+            materialTabControl1.Controls.Add(tabPage3);
+            materialTabControl1.Controls.Add(tabPage4);
+            materialTabControl1.Controls.Add(tabPage5);
+            materialTabControl1.Controls.Add(tabPage6);
+            materialTabControl1.Controls.Add(tabPage7);
+            materialTabControl1.Controls.Add(tabPage8);
+            materialTabControl1.Depth = 0;
+            materialTabControl1.ImeMode = ImeMode.On;
+            materialTabControl1.Location = new Point(582, 14);
+            materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialTabControl1.Multiline = true;
+            materialTabControl1.Name = "materialTabControl1";
+            materialTabControl1.SelectedIndex = 0;
+            materialTabControl1.Size = new Size(433, 168);
+            materialTabControl1.TabIndex = 3;
+            materialTabControl1.SelectedIndexChanged += materialTabControl1_SelectedIndexChanged;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 54);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(425, 110);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Usuarios";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 54);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(425, 110);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Mantenedor";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            tabPage3.Location = new Point(4, 54);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(425, 110);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Ventas";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            tabPage4.Location = new Point(4, 54);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(425, 110);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Compras";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            tabPage5.Location = new Point(4, 54);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(425, 110);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Clientes";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            tabPage6.Location = new Point(4, 54);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Padding = new Padding(3);
+            tabPage6.Size = new Size(425, 110);
+            tabPage6.TabIndex = 5;
+            tabPage6.Text = "Proveedores";
+            tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            tabPage7.Location = new Point(4, 54);
+            tabPage7.Name = "tabPage7";
+            tabPage7.Padding = new Padding(3);
+            tabPage7.Size = new Size(425, 110);
+            tabPage7.TabIndex = 6;
+            tabPage7.Text = "Reportes";
+            tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            tabPage8.Location = new Point(4, 54);
+            tabPage8.Name = "tabPage8";
+            tabPage8.Padding = new Padding(3);
+            tabPage8.Size = new Size(425, 110);
+            tabPage8.TabIndex = 7;
+            tabPage8.Text = "Acerca de";
+            tabPage8.UseVisualStyleBackColor = true;
+            tabPage8.Click += tabPage8_Click;
             // 
             // lblusuario
             // 
@@ -315,7 +428,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(454, 44);
+            label3.Location = new Point(437, 44);
             label3.Name = "label3";
             label3.Size = new Size(0, 20);
             label3.TabIndex = 0;
@@ -324,7 +437,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1274, 519);
+            ClientSize = new Size(1333, 608);
             Controls.Add(contenedor);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -339,6 +452,7 @@
             menuStrip2.PerformLayout();
             contenedor.ResumeLayout(false);
             contenedor.PerformLayout();
+            materialTabControl1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -368,5 +482,14 @@
         private FontAwesome.Sharp.IconMenuItem verdetalleventa;
         private FontAwesome.Sharp.IconMenuItem submenuregistrarcompra;
         private FontAwesome.Sharp.IconMenuItem submenuverdetallecompra;
+        private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private TabPage tabPage3;
+        private TabPage tabPage4;
+        private TabPage tabPage5;
+        private TabPage tabPage6;
+        private TabPage tabPage7;
+        private TabPage tabPage8;
     }
 }
